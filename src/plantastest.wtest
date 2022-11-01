@@ -1,18 +1,26 @@
 import plantas.*
 describe "Test de Plantas"  {
 	
-	const menta1 = new Menta()
-	
-	method initialize() {
-		menta1.valor(3)
-	}
-	
+	const menta1 = new Menta(altura=1,anioDeObtencion=2003)
+	const menta2=new Menta(altura=0.3,anioDeObtencion=2000)
+	const soja1=new Soja(altura=0.6, anioDeObtencion=2009)
+	const quinoa1=new Quinoa(horasDeSol=12,altura=10,anioDeObtencion=2010)
 	test "Menta - test de ejemplo" {
-		assert.equals(3, menta1.valor())
+		assert.that(menta1.daSemillas())
 
 	}
 	
+	test"menta 0.3 , no da semillas ocupa 0.9 m2"{
+		assert.equals(0.9, menta2.espacioQueOcupa())
+	}
+
+    test "soja 0.6  y semilla 2009 , 7 horas tolerancia , no da semillas y ocupa 0.3"{
+    	assert.equals(7,soja1.horasDeSolQueTolera())
+    	assert.notThat(soja1.daSemillas())
+    	assert.equals(0.3, soja1.espacioQueOcupa())
+    }
+    test "Quinoa"{
+    	assert.that(quinoa1.daSemillas())
+    }
 }
-
-
 
