@@ -5,6 +5,7 @@ describe "Test de Plantas"  {
 	const menta2=new Menta(altura=0.3,anioDeObtencion=2000)
 	const soja1=new Soja(altura=0.6, anioDeObtencion=2009)
 	const quinoa1=new Quinoa(horasDeSol=12,altura=10,anioDeObtencion=2010)
+	const soja2=new SojaTransgenica(altura=1.8, anioDeObtencion=2009)
 	test "Menta - test de ejemplo" {
 		assert.that(menta1.daSemillas())
 
@@ -21,6 +22,9 @@ describe "Test de Plantas"  {
     }
     test "Quinoa"{
     	assert.that(quinoa1.daSemillas())
+    }
+    test "sojaTransgenica no da semillas"{
+    	assert.notThat(soja2.daSemillas())
     }
 }
 

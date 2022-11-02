@@ -1,30 +1,34 @@
 import parcelas.*
 import plantas.*
 import inta.*
-describe "inta"{
-  const parcela1=new ParcelasIndustriales(ancho=20,largo=1,horasDeSolQueRecibe=8)
-  const soja1=new Soja(altura=1, anioDeObtencion=2009)
-  const soja2=new Soja(altura=1, anioDeObtencion=2009)
-  const soja3=new Soja(altura=1, anioDeObtencion=2009)
-  const soja4=new Soja(altura=1, anioDeObtencion=2009)
-  const soja5=new Soja(altura=9,anioDeObtencion=200)
-  const parcela3 =new ParcelasEcologicas(ancho=20,largo=2,horasDeSolQueRecibe=3)
-  const parcela2=new ParcelasEcologicas(ancho=20,largo=10,horasDeSolQueRecibe=8)
-	method initilize(){
-	parcela2.plantarPlanta(soja1)
- 	parcela2.plantarPlanta(soja2)
- 	parcela2.plantarPlanta(soja3)
- 	parcela2.plantarPlanta(soja5)
- 	parcela2.plantarPlanta(soja4)	
-	
-	parcela1.plantarPlanta(soja1)
- 	parcela1.plantarPlanta(soja2)
- 	parcela1.plantarPlanta(soja3)
- 	parcela1.plantarPlanta(soja4)
- 	inta.agregarParcela(parcela1)
- 	inta.agregarParcela(parcela2)
- 	inta.agregarParcela(parcela3)
-	}
-	test "inta" {
+describe " tests inta"{
+	  const parcela1=new ParcelasIndustriales(ancho=20,largo=1,horasDeSolQueRecibe=8)
+	  const soja1=new Soja(altura=1, anioDeObtencion=2009)
+	  const soja2=new Soja(altura=1, anioDeObtencion=2009)
+	  const soja3=new Soja(altura=1, anioDeObtencion=2009)
+	  const soja4=new Soja(altura=1, anioDeObtencion=2009)
+	  const soja5=new Soja(altura=9,anioDeObtencion=200)
+	  const parcela3 =new ParcelasEcologicas(ancho=20,largo=2,horasDeSolQueRecibe=3)
+	  const parcela2=new ParcelasEcologicas(ancho=20,largo=10,horasDeSolQueRecibe=8)
+	method initialize(){
+		parcela2.plantarPlanta(soja1)
+	 	parcela2.plantarPlanta(soja2)
+	 	parcela2.plantarPlanta(soja3)
+	 	parcela2.plantarPlanta(soja5)
+	 	parcela2.plantarPlanta(soja4)	
+		
+		parcela1.plantarPlanta(soja1)
+	 	parcela1.plantarPlanta(soja2)
+	 	parcela1.plantarPlanta(soja3)
+	 	parcela1.plantarPlanta(soja4)
+	 	inta.agregarParcela(parcela1)
+	 	inta.agregarParcela(parcela2)
+	 	inta.agregarParcela(parcela3)
+		}
+	test "inta promedio de plantas 3 , una parcela con 4 , otra con 5 y otra con 0" {
 		assert.equals(3, inta.promedioDePlantas())
-	}}
+	}
+	test "parcelas con mas de 5 plantas, lista vacia"{
+		assert.equals([],inta.parcelasconMasPlantasDe(5) )
+	}
+	}
