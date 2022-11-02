@@ -14,7 +14,7 @@ class Menta inherits Plantas{
     override method esFuerte()=self.horasDeSolQueTolera()>10
 }
 class Soja inherits Plantas{
-	method suelosQuePrefiere(unaParcela)=unaParcela.horasDeSolQueRecibe()==self.horasDeSolQueTolera()
+	method sueloQuePrefiere(unaParcela)=unaParcela.horasDeSolQueRecibe()==self.horasDeSolQueTolera()
 	method horasDeSolQueTolera(){return if (altura<0.5){6} else if (altura<1){7} else{9}}
 	method espacioQueOcupa()= altura/2
 	method daSemillas()= altura>1&& anioDeObtencion>2007 or self.esFuerte()

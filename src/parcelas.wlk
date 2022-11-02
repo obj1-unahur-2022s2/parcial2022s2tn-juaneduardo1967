@@ -20,6 +20,7 @@ class Parcela {
 	class ParcelasEcologicas inherits Parcela{
 		method seAsociaBien(unaPlanta)=!self.tieneComplicaciones()&& unaPlanta.sueloQuePrefiere(self)
 		override method cantDePlantasBienAsociadas()=plantas.count({p=>self.seAsociaBien(p)})
+		method porcentajeDePlantasBienAsociadas()=(self.cantDePlantasBienAsociadas()*100)/self.cantDePlantas()
 		
 	}
 	class ParcelasIndustriales inherits Parcela{
